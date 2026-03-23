@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUBIKA | Arquitectura, Ingeniería y Construcción</title>
+    <style>
+        :root {
+            --color-principal: #111111;
+            --color-fondo: #F7F7F7;
+            --color-acento: #0056b3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background-color: var(--color-fondo); color: var(--color-principal); line-height: 1.6; }
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; background: linear-gradient(rgba(247, 247, 247, 0.5), rgba(247, 247, 247, 0.7)), url('img/LOGO/Portada.avif') center/cover no-repeat; }
+        h1 { font-size: 4rem; font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; }
+        .subtitulo { font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; color: #555; }
+        .btn { display: inline-block; padding: 15px 30px; background-color: var(--color-acento); color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: background 0.3s; }
+        .btn:hover { background-color: #003d82; }
+        .seccion { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .seccion h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; text-transform: uppercase; }
+        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .servicio { background: white; padding: 40px; border-top: 4px solid var(--color-principal); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .servicio h3 { margin-bottom: 15px; font-size: 1.5rem; }
+        .seccion h2, .servicio h3, .servicio p, .obra-card h3, .obra-card p { color: var(--color-acento); }
+        .grid-obras { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .obra-card { background: white; padding: 40px; border-top: 4px solid var(--color-acento); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .obra-card h3 { margin-bottom: 10px; font-size: 1.5rem; }
+        .obra-card p { margin-bottom: 25px; font-size: 0.95rem; }
+        .galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 8px; }
+        .galeria img { width: 100%; height: 70px; object-fit: cover; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: transform 0.2s ease; cursor: pointer; }
+        .galeria img:hover { transform: scale(1.08); }
+        /* Modal Lightbox */
+        .modal-lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; flex-direction: column; }
+        .modal-lightbox img { max-width: 90%; max-height: 85vh; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); object-fit: contain; }
+        .modal-lightbox .cerrar { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.3s; z-index: 1010; }
+        .modal-lightbox .cerrar:hover { color: #bbb; }
+        .modal-lightbox .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: white; border: none; font-size: 40px; padding: 15px 25px; cursor: pointer; transition: background 0.3s; user-select: none; z-index: 1010; }
+        .modal-lightbox .nav-btn:hover { background: rgba(0,0,0,0.8); }
+        .modal-lightbox .prev-btn { left: 0; border-radius: 0 4px 4px 0; }
+        .modal-lightbox .next-btn { right: 0; border-radius: 4px 0 0 4px; }
+        footer { background-color: var(--color-principal); color: white; text-align: center; padding: 60px 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/LOGO/LOGO.avif" alt="Logo KUBIKA" style="max-height: 150px; margin-bottom: 25px;">
+        <h1>KUBIKA</h1>
+        <p class="subtitulo">Estudio de Arquitectura e Ingeniería. Materializamos tu proyecto en Paraguay con diseño inteligente y total transparencia.</p>
+        <a href="https://wa.me/595975103386" class="btn" target="_blank">Hablemos de tu proyecto</a>
+    </header>
+
+    <section class="seccion" id="sobre-nosotros" style="background-color: white;">
+        <h2>Nuestra Historia</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.15rem; color: #444; line-height: 1.8;">
+            <p style="margin-bottom: 25px;">
+                La construcción y el diseño siempre corrieron por nuestras venas. Provenimos de una <strong>familia constructora</strong> con bases sólidas en el rubro. Hoy, como equipo de hermanos arquitectos e ingenieros, continuamos el legado.
+            </p>
+            <p style="margin-bottom: 30px;">
+                Con años de trayectoria tanto en obras del ámbito público como en desarrollos del sector privado, entendemos el valor de cada ladrillo. Elegir a <strong>KUBIKA</strong> no es solo contratar un servicio, es tener la tranquilidad de entregar tu proyecto a un equipo netamente profesional.
+            </p>
+            <p style="font-weight: bold; font-size: 1.3rem; color: var(--color-acento);">
+                Tu obra, diseñada y ejecutada por una familia experta.
+            </p>
+        </div>
+    </section>
+
+    <section class="seccion" id="metodo">
+        <h2>El Método KUBIKA</h2>
+        <div class="grid-servicios">
+            <div class="servicio">
+                <h3>01. Proyecto</h3>
+                <p>Escuchamos tu necesidad y la transformamos en un diseño 3D realista. Pasá de la idea a visualizar tu futura obra.</p>
+            </div>
+            <div class="servicio">
+                <h3>02. Ingeniería Evolutiva</h3>
+                <p>Calculamos estructuras pensadas para el hoy y preparadas para crecer mañana. Construcción por etapas y evolutivas.</p>
+            </div>
+            <div class="servicio">
+                <h3>03. Ejecución Integral</h3>
+                <p>Pasamos de los planos a la obra. Realizamos todo tipo de proyectos de arquitectura, ingeniería civil y vial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2>Nuestros Proyectos y Obras</h2>
+        <div class="grid-obras">
+            <div class="obra-card">
+                <h3>Ampliación Casa EBY</h3>
+                <p>Diseño y construcción de una ampliación de una vivienda EBY. Integración Cocina Comedor Estar y 3 Dormitorios, pensado en construcción en etapas de ejecución.</p>
+                <div class="galeria" id="galeria-eby"></div>
+            </div>
+            <div class="obra-card">
+                <h3>Estación de Servicio - Cielorraso</h3>
+                <p>Instalación técnica de cielorrasos comerciales con los más altos estándares de seguridad y estética.</p>
+                <div class="galeria" id="galeria-estacion"></div>
+            </div>
+            <div class="obra-card">
+                <h3>Estación de Servicio - Techo</h3>
+                <p>Mantenimiento y reparación integral de cubiertas. Instalamos babetas perimetrales y diseñamos dos bajadas pluviales independientes para solucionar filtraciones de agua definitivamente.</p>
+                <div class="galeria" id="galeria-estacion-techo"></div>
+            </div>
+            <div class="obra-card">
+                <h3>Locales y Departamentos</h3>
+                <p>Proyecto inmobiliario de uso mixto: amplios locales comerciales en planta baja y cómodos departamentos para alquiler rentables, sumando estacionamiento privado vehicular exclusivo.</p>
+                <div class="galeria" id="galeria-locales-deptos"></div>
+            </div>
+            <div class="obra-card">
+                <h3>Kinesiología y Mecánico Dental</h3>
+                <p>Diseño integral de vivienda con anexo de espacios de trabajo privados. Incorporamos al frente un consultorio de kinesiología y un taller de mecánica dental para poder ejercer profesionalmente desde la comodidad del hogar.</p>
+                <div class="galeria" id="galeria-kinesiologia"></div>
+            </div>
+            <div class="obra-card">
+                <h3>Paseo Comercial</h3>
+                <p>Diseño y ejecución de modernos locales comerciales ubicados estratégicamente sobre el concurrido Circuito Comercial de la ciudad de Encarnación.</p>
+                <div class="galeria" id="galeria-paseo"></div>
+            </div>
+            <div class="obra-card">
+                <h3>Restaurante Temático</h3>
+                <p>Ambientación y diseño estratégico para el rubro gastronómico en la Triple Frontera. Todo coronado con un imponente mirador turístico en el piso superior.</p>
+                <div class="galeria" id="galeria-restaurant"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Lightbox para ver fotos en grande -->
+    <div id="lightbox" class="modal-lightbox">
+        <span class="cerrar" onclick="cerrarLightbox()">&times;</span>
+        <button class="nav-btn prev-btn" onclick="cambiarFoto(-1)">&#10094;</button>
+        <img id="img-lightbox" src="" alt="Foto ampliada">
+        <button class="nav-btn next-btn" onclick="cambiarFoto(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let fotosActuales = [];
+        let indiceActual = 0;
+
+        // Lógica del Lightbox interactivo
+        function abrirLightbox(index, arraySrc) {
+            fotosActuales = arraySrc;
+            indiceActual = index;
+            actualizarImagen();
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function cerrarLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function cambiarFoto(direccion) {
+            indiceActual += direccion;
+            if (indiceActual < 0) indiceActual = fotosActuales.length - 1;
+            if (indiceActual >= fotosActuales.length) indiceActual = 0;
+            actualizarImagen();
+        }
+
+        function actualizarImagen() {
+            document.getElementById('img-lightbox').src = fotosActuales[indiceActual];
+        }
+
+        // Eventos de teclado (Flechas y Escape)
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'flex') {
+                if (event.key === 'ArrowLeft') cambiarFoto(-1);
+                if (event.key === 'ArrowRight') cambiarFoto(1);
+                if (event.key === 'Escape') cerrarLightbox();
+            }
+        });
+
+        // Eventos táctiles (Swipe en celulares)
+        let touchstartX = 0;
+        let touchendX = 0;
+        const lightboxElement = document.getElementById('lightbox');
+
+        lightboxElement.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        });
+
+        lightboxElement.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            if (touchendX < touchstartX - 40) cambiarFoto(1); // Swipe izquierda -> Siguiente
+            if (touchendX > touchstartX + 40) cambiarFoto(-1); // Swipe derecha -> Anterior
+        });
+
+        // Cerrar al hacer clic en el fondo oscuro
+        lightboxElement.onclick = function(e) {
+            if (e.target.id === 'lightbox') cerrarLightbox();
+        }
+
+        // Filosofía limpia: Generación y mapeo por obra
+        function cargarGaleria(contenedorId, rutaBase, cantidad, extension = 'avif') {
+            const contenedor = document.getElementById(contenedorId);
+            const arrayFotos = [];
+            
+            for(let i = 1; i <= cantidad; i++) {
+                arrayFotos.push(`${rutaBase}/${i}.${extension}`);
+            }
+
+            for(let i = 0; i < cantidad; i++) {
+                const img = document.createElement('img');
+                img.src = arrayFotos[i];
+                img.alt = `Vista ${i+1} de la obra`;
+                img.loading = "lazy";
+                
+                // Pasamos el índice actual y el array de toda la galería de esa obra
+                img.onclick = () => abrirLightbox(i, arrayFotos);
+                
+                contenedor.appendChild(img);
+            }
+        }
+        
+        // Iniciar galerías
+        cargarGaleria('galeria-eby', 'img/proyectos/casa-eby', 11, 'avif');
+        cargarGaleria('galeria-estacion', 'img/proyectos/estacion-servicio-cielorraso', 11, 'avif');
+        cargarGaleria('galeria-estacion-techo', 'img/proyectos/estacion-servicio-techo', 6, 'avif');
+        cargarGaleria('galeria-locales-deptos', 'img/proyectos/locales-y-departamentos', 6, 'avif');
+        cargarGaleria('galeria-kinesiologia', 'img/proyectos/Kinesiología-y-Mecánico-Dental', 9, 'avif');
+        cargarGaleria('galeria-paseo', 'img/proyectos/Locales-paseo-comercial', 4, 'avif');
+        cargarGaleria('galeria-restaurant', 'img/proyectos/Restaurant-tematico', 9, 'avif');
+    </script>
+
+    <footer>
+        <p>Escribinos directamente para analizar tu proyecto.</p><br>
+        <a href="https://wa.me/595975103386" class="btn" target="_blank">WhatsApp</a>
+        <br><br>
+        <p style="color: #888; font-size: 0.9rem;">Coronel Bogado, Itapúa | kubikaconstructora@gmail.com</p>
+    </footer>
+</body>
+</html>
