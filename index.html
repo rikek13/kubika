@@ -12,7 +12,7 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
         body { background-color: var(--color-fondo); color: var(--color-principal); line-height: 1.6; }
-        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; background: linear-gradient(rgba(247, 247, 247, 0.5), rgba(247, 247, 247, 0.7)), url('img/LOGO/Portada.avif') center/cover no-repeat; }
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; background: linear-gradient(rgba(247, 247, 247, 0.5), rgba(247, 247, 247, 0.7)), url('img/Logo/portada.avif') center/cover no-repeat; }
         h1 { font-size: 4rem; font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; }
         .subtitulo { font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; color: #555; }
         .btn { display: inline-block; padding: 15px 30px; background-color: var(--color-acento); color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: background 0.3s; }
@@ -44,7 +44,7 @@
 </head>
 <body>
     <header>
-        <img src="img/LOGO/LOGO.avif" alt="Logo KUBIKA" style="max-height: 150px; margin-bottom: 25px;">
+        <img src="img/Logo/logo.avif" alt="Logo KUBIKA" style="max-height: 150px; margin-bottom: 25px;">
         <h1>KUBIKA</h1>
         <p class="subtitulo">Estudio de Arquitectura e Ingeniería. Materializamos tu proyecto en Paraguay con diseño inteligente y total transparencia.</p>
         <a href="https://wa.me/595975103386" class="btn" target="_blank">Hablemos de tu proyecto</a>
@@ -120,6 +120,11 @@
                 <h3>Restaurante Temático</h3>
                 <p>Ambientación y diseño estratégico para el rubro gastronómico en la Triple Frontera. Todo coronado con un imponente mirador turístico en el piso superior.</p>
                 <div class="galeria" id="galeria-restaurant"></div>
+            </div>
+            <div class="obra-card">
+                <h3>Centro Gerontológico</h3>
+                <p>Diseño y ejecución de espacios adaptados para la salud, cuidado y bienestar integral de adultos mayores.</p>
+                <div class="galeria" id="galeria-centro-gerontologico"></div>
             </div>
         </div>
     </section>
@@ -215,9 +220,10 @@
         cargarGaleria('galeria-estacion', 'img/proyectos/estacion-servicio-cielorraso', 11, 'avif');
         cargarGaleria('galeria-estacion-techo', 'img/proyectos/estacion-servicio-techo', 6, 'avif');
         cargarGaleria('galeria-locales-deptos', 'img/proyectos/locales-y-departamentos', 6, 'avif');
-        cargarGaleria('galeria-kinesiologia', 'img/proyectos/Kinesiología-y-Mecánico-Dental', 9, 'avif');
-        cargarGaleria('galeria-paseo', 'img/proyectos/Locales-paseo-comercial', 4, 'avif');
+        cargarGaleria('galeria-kinesiologia', 'img/proyectos/kinesiologia-y-mecanico-dental', 9, 'avif');
+        cargarGaleria('galeria-paseo', 'img/proyectos/locales-paseo-comercial', 4, 'avif');
         cargarGaleria('galeria-restaurant', 'img/proyectos/Restaurant-tematico', 9, 'avif');
+        cargarGaleria('galeria-centro-gerontologico', 'img/proyectos/centro-gerontologico', 6, 'avif');
     </script>
 
     <footer>
